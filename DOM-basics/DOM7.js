@@ -1,8 +1,8 @@
 let input = document.querySelector('input');
 
 input.onblur = () => {
-    value = input.value; 
-    a = value.split('.').reverse(); 
-    b = a.join('-');
+    let value = input.value; 
+    let a = value.split('.').reverse(); 
+    let b = a.join('-');
     input.value = b;
 }
