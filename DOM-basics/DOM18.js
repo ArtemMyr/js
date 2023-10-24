@@ -8,6 +8,4 @@ let rand = () => {
 button.onclick = () => {
     input.value = ' ';
     for (let i = 0; i < 9; i++) {
-        input.value += String.fromCharCode(rand());
-    }
-}
+       
