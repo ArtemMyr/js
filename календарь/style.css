@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #202020;
+    color: #fff;
+    font-size: 24px;
+}
+
+.year {
+    display: flex;
+    justify-content: center;
+}
+
+.month {
+    margin-top: 25px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.block {
+    background: #252424;
+    padding: 5px;
+}
+
+.day {
+    margin-top: 15px;
+}
+
+ul {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+li {
+    list-style-type: none;
+}
