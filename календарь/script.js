@@ -15,23 +15,24 @@ let obj = {
     11: 'Декабрь'
 };
 
-function getMaxDaysInMonth(month, year) {
-    if (year === 'undefined') {
-        year = new Date().getFullYear();
-    }
-
-    let lastDay = new Date(year, month + 1, 0);
-
-    return lastDay.getDate();
-}
 
 
 let month = data.getMonth();
 let year = data.getFullYear();
 
-let maxDays = getMaxDaysInMonth(month, year);
+let maxDays = 0;
 
 
+function getMaxDaysInMonth(month, year) {
+
+
+    let lastDay = new Date(year, month, 0);
+    console.log('year: ', year);
+    console.log('month: ', month);
+    console.log('lastDay : ', lastDay );
+
+    return lastDay.getDate();
+}
 
 
 let body = document.querySelector('body');
@@ -65,7 +66,9 @@ let rendermonth = (()=>{
                             day.remove();
                         });
                         firstDayOfWeek = getFirstDayOfWeekInMonth(i, 2023);
-                        getFirstDayOfWeekInMonth(i, 2023);
+                        maxDays = getMaxDaysInMonth(i, 2023);
+                        
+                        
                         renderday();
                     }
                 }
@@ -77,9 +80,8 @@ let rendermonth = (()=>{
         body.appendChild(divMonth);
 })();
 
-
 function getFirstDayOfWeekInMonth(month, year) {
-    let firstDay = new Date(year, month, 0);
+    let firstDay = new Date(month, year, 0);
     let dayOfWeek = firstDay.getDay();
     console.log('dayOfWeek: ', dayOfWeek);
 
@@ -119,6 +121,7 @@ let renderday = function(){
     }
 
     for (let i = 1; i <= maxDays; i++) {
+        console.log('maxDays: ', maxDays);
         let div = document.createElement('div');
         div.classList.add('day');
         div.textContent = i;
@@ -129,5 +132,19 @@ let renderday = function(){
 };
 
 
-console.log(data);
 
+
+
+
+// function getMaxDaysInMonth(month, year) {
+//         if (year === 'undefined') {
+//             year = new Date().getFullYear();
+//         }
+    
+//         let lastDay = new Date(year, month , 0);
+    
+//         // return lastDay.getDate();
+//         console.log('lastDay.getDate(): ', lastDay.getDate());
+//     }
+
+//     getMaxDaysInMonth(2,2023);
